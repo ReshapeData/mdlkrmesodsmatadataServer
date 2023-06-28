@@ -11,11 +11,11 @@
 #' @export
 #'
 #' @examples viewcosucompanyserver()  
-krmesempodsserver <- function(input,output,session,dms_token) {
+krmesempodsmatadataserver <- function(input,output,session,dms_token) {
 
   
   shiny::observe({
-    shiny::observeEvent(input$btn_krmesempods_view,
+    shiny::observeEvent(input$btn_krmesempodsmatadata_view,
                         {
                             sql = 'select * from rds_kr_mes_ods_bd_employee'
                             
@@ -54,7 +54,7 @@ krmesempodsserver <- function(input,output,session,dms_token) {
                                             '银行网点'
                             ) 
                             #显示数据
-                            tsui::run_dataTable2(id = 'krmesempods_view_data', data = data)
+                            tsui::run_dataTable2(id = 'krmesempodsmatadata_view_data', data = data)
                             
                             
                  
@@ -77,8 +77,8 @@ krmesempodsserver <- function(input,output,session,dms_token) {
 #' @export
 #'
 #' @examples HrvServer()
-krmesempodsServer <- function(input,output,session,dms_token) {
+krmesempodsmatadataServer <- function(input,output,session,dms_token) {
   #预览数据
-  krmesempodsserver(input,output,session,dms_token)
+  krmesempodsmatadataserver(input,output,session,dms_token)
 
 }

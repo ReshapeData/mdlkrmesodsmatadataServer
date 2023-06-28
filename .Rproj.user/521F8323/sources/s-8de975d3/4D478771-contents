@@ -11,11 +11,11 @@
 #' @export
 #'
 #' @examples viewdeptserver()  
-krmesmaterialodsserver <- function(input,output,session,dms_token) {
+krmesmaterialodsmatadataserver <- function(input,output,session,dms_token) {
 
   
   shiny::observe({
-    shiny::observeEvent(input$btn_krmesmaterialods_view,
+    shiny::observeEvent(input$btn_krmesmaterialodsmatadata_view,
                         {
                             sql = 'select * from rds_kr_mes_ods_bd_material'
                             
@@ -94,7 +94,7 @@ krmesmaterialodsserver <- function(input,output,session,dms_token) {
                                             
                             )
                             #显示数据
-                            tsui::run_dataTable2(id = 'krmesmaterialods_view_data', data = data)
+                            tsui::run_dataTable2(id = 'krmesmaterialodsmatadata_view_data', data = data)
                             
                             
                  
@@ -117,8 +117,8 @@ krmesmaterialodsserver <- function(input,output,session,dms_token) {
 #' @export
 #'
 #' @examples HrvServer()
-krmesmaterialodsServer <- function(input,output,session,dms_token) {
+krmesmaterialodsmatadataServer <- function(input,output,session,dms_token) {
   #预览数据
-  krmesmaterialodsserver(input,output,session,dms_token)
+  krmesmaterialodsmatadataserver(input,output,session,dms_token)
 
 }

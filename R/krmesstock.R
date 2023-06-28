@@ -11,11 +11,11 @@
 #' @export
 #'
 #' @examples viewtplvoucherserver()  
-krmesstockodsserver <- function(input,output,session,dms_token) {
+krmesstockodsmatadataserver <- function(input,output,session,dms_token) {
 
   
   shiny::observe({
-    shiny::observeEvent(input$btn_krmesstockods_view,
+    shiny::observeEvent(input$btn_krmesstockodsmatadata_view,
                         {
                             sql = 'select * from rds_kr_mes_ods_bd_warehouse'
                             
@@ -65,7 +65,7 @@ krmesstockodsserver <- function(input,output,session,dms_token) {
                                             
                                             )
                             #显示数据
-                            tsui::run_dataTable2(id = 'krmesstockods_view_data', data = data)
+                            tsui::run_dataTable2(id = 'krmesstockodsmatadata_view_data', data = data)
                             
                             
                  
@@ -88,8 +88,8 @@ krmesstockodsserver <- function(input,output,session,dms_token) {
 #' @export
 #'
 #' @examples HrvServer()
-krmesstockodsServer <- function(input,output,session,dms_token) {
+krmesstockodsmatadataServer <- function(input,output,session,dms_token) {
   #预览数据
-  krmesstockodsserver(input,output,session,dms_token)
+  krmesstockodsmatadataserver(input,output,session,dms_token)
 
 }
